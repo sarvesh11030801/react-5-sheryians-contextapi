@@ -1,7 +1,5 @@
+import MyContext from '@/Helper/Context'
 import './globals.css'
-import { Inter } from 'next/font/google'
-
-const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'Create Next App',
@@ -11,7 +9,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body>
+        <MyContext>{children}</MyContext>
+      </body>
     </html>
+    // Yaha par context aaise rakha hay jaise bread ka packet fridge me rakha ke jisko bhi chhayea vo le sakta hay. Vaise he context ke value layout me add karenge to jis JS file ko vo context chhayea vo JS file le lega.
   )
 }
